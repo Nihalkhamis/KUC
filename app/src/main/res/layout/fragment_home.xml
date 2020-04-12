@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/toolbarHome"
+        android:layout_width="match_parent"
+        android:layoutDirection="rtl"
+        android:layout_height="60dp"
+        android:background="@color/colorGreen">
+
+        <ImageView
+            android:id="@+id/menu_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/menu_icon" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:textStyle="normal"
+            android:layout_toLeftOf="@+id/menu_image"
+            android:textColor="@color/colorWhite"
+            android:text="مركز اليسر للكلي والمسالك البولية"/>
+    </RelativeLayout>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_below="@+id/toolbarHome"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layoutDirection="rtl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/categoryRV"
+           tools:itemCount="6"
+           android:paddingBottom="20dp"
+           app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+           tools:listitem="@layout/home_one_item"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

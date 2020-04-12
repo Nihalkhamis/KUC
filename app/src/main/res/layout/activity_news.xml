@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorGreen"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/news_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:drawableRight="@drawable/back_arrow"
+            android:drawableTint="@color/colorWhite"
+            android:gravity="center"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:text="@string/menu_news"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutDirection="rtl"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="16dp">
+
+                <ImageView
+                    android:id="@+id/backgroundImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/splash"
+                    tools:ignore="ContentDescription" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp">
+
+                    <!--      <ImageView
+                              android:id="@+id/share"
+                              android:layout_width="30dp"
+                              android:layout_height="30dp"
+                              android:layout_alignParentBottom="true"
+                              android:layout_alignParentLeft="true"
+                              android:padding="5dp"
+                              android:src="@drawable/share_icon"
+                              android:tint="@color/colorBlack" /> -->
+
+                    <TextView
+                        android:id="@+id/articleName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="اسم الموضوع"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:text="التاريخ"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorBlack" />
+
+                    <!--    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:orientation="vertical">
+
+
+                        </LinearLayout> -->
+
+                    <!--     <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_alignParentLeft="true"
+                             android:layout_alignParentTop="true"
+                             android:orientation="horizontal">
+
+                             <TextView
+                                 android:id="@+id/numOfViews"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginEnd="5dp"
+                                 android:layout_marginStart="5dp"
+                                 android:text="100"
+                                 android:textColor="@color/colorBlack" />
+
+                             <ImageView
+                                 android:layout_width="20dp"
+                                 android:layout_height="20dp"
+                                 android:layout_gravity="center"
+                                 android:src="@drawable/num_of_views_icon" />
+
+                         </LinearLayout> -->
+
+                    <TextView
+                        android:id="@+id/sectionName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="القسم"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorBlack"/>
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newsCardRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="6"
+                tools:listitem="@layout/news_card_one_item" />
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
